@@ -1,0 +1,26 @@
+{% extends "cv_app/vista_admin.html" %}
+
+{% load static %}
+
+{% block contenido_experiencia %}
+
+<div style="background-color: rgba(0, 0, 0, 0.144);">
+
+    <h1>Ingrese experiencia:</h1>
+    <!-- {% if mi_formulario.errors %}
+
+    <p style="color: red;">Están mal los datos, revisar</p>
+
+    {% endif %} -->
+
+    <form action="" method="POST"> {% csrf_token %}
+
+        <table>
+            {{ mi_formulario.as_table }}
+        </table>
+
+        <input type="submit", value="Enviar">
+
+    </form>
+</div> 
+{% endblock %}
