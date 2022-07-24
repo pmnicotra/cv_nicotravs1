@@ -1,0 +1,21 @@
+{% extends "cv_app/nav.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<body>
+
+    <form method="POST"> {% csrf_token %}
+       
+        {{form.as_p}}
+        <input type="submit" value="enviar">
+        <a href="{% url 'List_Formacion' %}">Regresar</a>
+    </form>
+
+    
+</body>
+
+{% endblock %}
+
+
+

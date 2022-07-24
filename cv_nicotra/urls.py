@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from xml.etree.ElementInclude import include
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from cv_app import views
 from django.contrib.auth.views import LogoutView
 from cv_app.views import *
@@ -23,11 +23,6 @@ from cv_app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cv_app', views.inicio, name="Inicio"),
-    path('form_experiencia', views.form_experiencia, name="Experiencia"),
-    path('form_formacion', views.form_formacion, name="Formación"),
-    path('login', views.login_request, name='login'),
-    path('register', views.register, name='register'),
-    path('logout', LogoutView.as_view(template_name='cv_app/logout.html'), name='logout'),
-    path('editar_perfil', views.editar_perfil, name='Editar_Perfil'),
+    path('cv_app/', include('cv_app.urls')),
+    
 ]

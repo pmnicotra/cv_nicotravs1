@@ -7,30 +7,21 @@ class Formacion(models.Model):
     titulo = models.CharField(max_length=50)
     grado = models.CharField(max_length=50)
     universidad = models.CharField(max_length=50)
-    anio_recibido = models.IntegerField()
+    año_recibido = models.IntegerField()
+
+    def __str__(self):return f"Título: {self.titulo} - Grado: {self.grado} - Universidad: {self.universidad} - Año_Recibido: {self.año_recibido}"
+
 
 
 class Experiencia(models.Model):
 
     puesto = models.CharField(max_length=50)
     empresa = models.CharField(max_length=50)
-    desde = models.IntegerField()
+    desde = models.CharField(max_length=50)
     hasta = models.CharField(max_length=50)
-    tareas_1 = models.CharField(max_length=100)
-    tareas_2 = models.CharField(max_length=100)
-    tareas_3 = models.CharField(max_length=100)
-    tareas_4 = models.CharField(max_length=100)
-    tareas_5 = models.CharField(max_length=100)
+    tareas = models.CharField(max_length=100)
 
-
-class Skills(models.Model):
-
-    habilidad = models.CharField(max_length=50)
-
-
-class Logros(models.Model):
-
-    detalle = models.CharField(max_length=100)
+    def __str__(self):return f"Puesto: {self.puesto} - Empresa: {self.empresa} - Desde: {self.desde} - Hasta: {self.hasta}, Tareas: {self.tareas}"
    
 
 

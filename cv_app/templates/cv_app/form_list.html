@@ -1,0 +1,25 @@
+{% extends "cv_app/nav.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<body>
+
+    <h3>Formación cargada:</h3>
+    <ul>
+        {% for formacion in object_list %}
+
+            <li>
+                <p>Título: {{ formacion.titulo }} </p>
+                <p> 
+                    <a href="{% url 'Detail_Formacion' formacion.id %}">Ver</a> | 
+                    <a href="{% url 'Edit_Formacion' formacion.id %}">Editar</a> | 
+                    <a href="{% url 'Delete_Formacion' formacion.id %}">Borrar</a> 
+                
+                </p>
+            </li>
+
+        {% endfor %}
+    </ul>
+
+    {% endblock %}

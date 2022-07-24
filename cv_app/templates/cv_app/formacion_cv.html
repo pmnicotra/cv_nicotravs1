@@ -1,0 +1,28 @@
+{% extends "cv_app/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Formación</h2>
+
+    {% if form %}
+        {% for i in form %}
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">{{i.titulo}}</h3>
+                <div class="subheading mb-3">{{i.universidad}}</div>
+                <div>{{i.grado}}</div>
+                
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">{{i.año_recibido}}</span></div>
+        </div>
+        {% endfor %}
+    {% endif %}   
+    </div>    
+</section>
+
+{% endblock %}

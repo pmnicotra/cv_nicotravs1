@@ -1,0 +1,22 @@
+{% extends "cv_app/nav.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<body>
+
+   
+    <p>Título: <i>{{ formacion.titulo }}</i></p>
+    <p>Grado: <i>{{ formacion.grado }}</i></p>
+    <p>Universidad: <i>{{ formacion.universidad }}</i></p>
+    <p>Año de recibida: <i>{{ formacion.año_recibido }}</i></p>
+    <p>
+        <a href="{% url 'List_Formacion' %}">Regresar</a>
+    </p>
+
+    
+</body>
+
+{% endblock %}
+

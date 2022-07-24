@@ -1,0 +1,17 @@
+{% extends "cv_app/nav.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<body>
+
+
+    <form method="post">{% csrf_token %}
+        ¿Estás seguro que deseas borrar la formación "{{ object }}"?
+        <input type="submit" value="Continuar" />
+    </form>
+
+    
+</body>
+
+{% endblock %}
